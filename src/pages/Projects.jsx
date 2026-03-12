@@ -54,8 +54,8 @@ const Projects = () => {
                                     <h3 className="outfit" style={{ fontSize: '3rem', marginTop: '0.5rem', marginBottom: '1rem', color: '#fff' }}>{proj.title}</h3>
                                     <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', maxWidth: '800px', lineHeight: '1.6' }}>{proj.desc}</p>
                                 </div>
-                                
-                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', marginBottom: '3rem' }}>
+
+                                <div className="responsive-grid-2" style={{ marginBottom: '3rem' }}>
                                     <div>
                                         <h4 className="outfit" style={{ fontSize: '1.5rem', color: 'var(--accent-color)', marginBottom: '1.5rem' }}>Key Features</h4>
                                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -80,7 +80,7 @@ const Projects = () => {
                                     </div>
                                 </div>
 
-                                <div className="glass" style={{ padding: '2rem', display: 'flex', alignItems: 'center',justifyContent: 'center', gap: '20px', borderRadius: '15px', background: 'rgba(0,0,0,0.3)', textAlign: 'center' }}>
+                                <div className="glass" style={{ padding: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', borderRadius: '15px', background: 'rgba(0,0,0,0.3)', textAlign: 'center' }}>
                                     <Zap size={32} style={{ color: 'var(--accent-color)' }} />
                                     <div>
                                         <h4 className="outfit" style={{ fontSize: '1.8rem', color: '#fff', margin: 0 }}>{proj.metrics}</h4>

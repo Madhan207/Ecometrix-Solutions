@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;700&display=swap');
 
 :root {
-  --bg-color: #f4f9f4; /* Bright and vibrant light green/white */
+  --bg-color: #f4f9f4;
+  /* Bright and vibrant light green/white */
   --panel-color: #ffffff;
-  --accent-color: #7cb342; /* green from logo */
+  --accent-color: #7cb342;
+  /* green from logo */
   --accent-secondary: #558b2f;
   --text-primary: #1a1a1a;
   --text-secondary: #4a4a4a;
@@ -18,15 +20,22 @@
   box-sizing: border-box;
 }
 
-body {
+body,
+html {
   font-family: 'Inter', sans-serif;
   background-color: var(--bg-color);
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
 }
 
-h1, h2, h3, h4, .outfit {
+h1,
+h2,
+h3,
+h4,
+.outfit {
   font-family: 'Outfit', sans-serif;
 }
 
@@ -89,7 +98,7 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
+  background-image:
     linear-gradient(rgba(124, 179, 66, 0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(124, 179, 66, 0.1) 1px, transparent 1px);
   background-size: 50px 50px;
@@ -108,8 +117,16 @@ ul {
   filter: blur(40px);
 }
 
-.bg-orb-1 { top: -100px; right: -100px; }
-.bg-orb-2 { bottom: -100px; left: -100px; background: radial-gradient(circle, rgba(85, 139, 47, 0.1) 0%, transparent 70%); }
+.bg-orb-1 {
+  top: -100px;
+  right: -100px;
+}
+
+.bg-orb-2 {
+  bottom: -100px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(85, 139, 47, 0.1) 0%, transparent 70%);
+}
 
 /* Glassmorphism Classes */
 .glass {
@@ -124,8 +141,15 @@ ul {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Navbar styles */
@@ -175,7 +199,8 @@ ul {
   transition: color 0.3s ease;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
   color: var(--accent-color);
 }
 
@@ -249,12 +274,115 @@ ul {
   font-size: 0.85rem;
 }
 
+/* Responsive Grid Utilities */
+.responsive-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.responsive-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.responsive-grid-1-2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.responsive-grid-5-4 {
+  display: grid;
+  grid-template-columns: 5fr 4fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.responsive-grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+.hero-bot-image {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  opacity: 0.6;
+}
+
 /* Responsive */
 @media (max-width: 968px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
+
   .nav-links {
+    display: none;
+  }
+
+  /* Make all grids stack to single column on tablets/mobile */
+  .responsive-grid-2,
+  .responsive-grid-1-2,
+  .responsive-grid-5-4 {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .responsive-grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Adjust hero text and layout for mobile */
+  .hero-section {
+    padding-top: 100px !important;
+    text-align: center;
+  }
+
+  /* Push hero content inwards so navbar doesn't clip */
+  .hero-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-section h1 {
+    font-size: 2.8rem !important;
+  }
+
+  .hero-section p {
+    font-size: 1.1rem !important;
+  }
+
+  .hero-section .glow-btn,
+  .hero-section .secondary-btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Prevent overlapping bot image on smaller screens */
+  .hero-bot-image {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    opacity: 0.3 !important;
+    z-index: 0;
+  }
+
+  /* Hide excessive background shapes on mobile */
+  .bg-orb {
     display: none;
   }
 }
@@ -262,5 +390,23 @@ ul {
 @media (max-width: 480px) {
   .footer-grid {
     grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-section h1 {
+    font-size: 2.2rem !important;
+  }
+
+  .section {
+    padding: 50px 0;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .hero-bot-image .bot-icon-svg {
+    width: 300px !important;
+    height: 300px !important;
   }
 }

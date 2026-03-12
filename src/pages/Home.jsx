@@ -48,7 +48,8 @@ const Home = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 1, duration: 0.8 }}
-                            style={{ display: 'flex', gap: '1.5rem' }}
+                            style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center' }}
+                            className="hero-buttons"
                         >
                             <Link to="/solutions" className="glow-btn" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>Explore Solutions <ArrowRight size={18} style={{ marginLeft: '10px' }} /></Link>
                             <Link to="/technology" className="secondary-btn" style={{ textDecoration: 'none', display: 'inline-block' }}>Watch Technology</Link>
@@ -61,10 +62,10 @@ const Home = () => {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1.5 }}
-                    style={{ position: 'absolute', right: '5%', top: '50%', transform: 'translateY(-50%)', zIndex: 1, opacity: 0.6 }}
+                    className="hero-bot-image"
                 >
                     <div style={{ padding: '4rem', background: 'radial-gradient(circle, rgba(0, 229, 255, 0.1) 0%, transparent 80%)', borderRadius: '50%' }}>
-                        <Bot size={500} style={{ color: 'var(--accent-color)', opacity: 0.8 }} />
+                        <Bot size={500} style={{ color: 'var(--accent-color)', opacity: 0.8 }} className="bot-icon-svg" />
                     </div>
                 </motion.div>
 
@@ -78,7 +79,7 @@ const Home = () => {
             {/* Intro Section */}
             <section className="intro-section section glass" style={{ borderLeft: 'none', borderRight: 'none' }}>
                 <div className="container">
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+                    <div className="responsive-grid-2">
                         <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
                             <h2 className="outfit" style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>Pioneering the Next Era of cleaning</h2>
                             <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
@@ -88,7 +89,7 @@ const Home = () => {
                                 Founded by a team of robotics enthusiasts and environmentalists, we strive to reduce human exposure to hazardous cleaning environments while delivering a level of precision that manual cleaning cannot match.
                             </p>
                         </motion.div>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
+                        <div className="responsive-grid-3">
                             {features.map((f, i) => (
                                 <motion.div
                                     key={i}
@@ -115,7 +116,7 @@ const Home = () => {
                         <h2 className="outfit" style={{ fontSize: '3rem', marginBottom: '1rem' }}>Our <span style={{ color: 'var(--accent-color)' }}>Services</span></h2>
                         <p style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>Leveraging state-of-the-art robotics to deliver tailored cleaning solutions across diverse environments.</p>
                     </div>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+                    <div className="responsive-grid-auto">
                         {services.map((s, i) => (
                             <motion.div
                                 key={i}

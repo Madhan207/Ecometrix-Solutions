@@ -24,7 +24,7 @@ const Contact = () => {
 
             <section className="contact-main section">
                 <div className="container">
-                    <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '5rem' }}>
+                    <div className="responsive-grid-1-2">
                         {/* Contact Form */}
                         <motion.div
                             initial={{ opacity: 0, x: -30 }}
@@ -34,14 +34,14 @@ const Contact = () => {
                         >
                             <h2 className="outfit" style={{ fontSize: '2.5rem', marginBottom: '2.5rem' }}>Send a Message</h2>
                             <form onSubmit={(e) => e.preventDefault()} style={{ display: 'grid', gap: '1.5rem' }}>
-                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+                                <div className="responsive-grid-2" style={{ gap: '1.5rem' }}>
                                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                                         <label style={{ fontSize: '0.85rem', fontWeight: 600 }}>Full Name</label>
-                                        <input type="text" placeholder="John Doe" style={{ padding: '1rem', background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border-color)', borderRadius: '10px', color: '#fff' }} />
+                                        <input type="text" placeholder="Enter Name" style={{ padding: '1rem', background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border-color)', borderRadius: '10px', color: '#fff' }} />
                                     </div>
                                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                                         <label style={{ fontSize: '0.85rem', fontWeight: 600 }}>Email Address</label>
-                                        <input type="email" placeholder="john@company.com" style={{ padding: '1rem', background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border-color)', borderRadius: '10px', color: '#fff' }} />
+                                        <input type="email" placeholder="your@gmail.com" style={{ padding: '1rem', background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border-color)', borderRadius: '10px', color: '#fff' }} />
                                     </div>
                                 </div>
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>

@@ -47,7 +47,7 @@ const Technology = () => {
 
             <section className="tech-grid section">
                 <div className="container">
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
+                    <div className="responsive-grid-auto">
                         {techs.map((t, i) => (
                             <motion.div
                                 key={t.title}
@@ -70,13 +70,13 @@ const Technology = () => {
 
             <section className="edge-computing section glass" style={{ borderLeft: 'none', borderRight: 'none', margin: '4rem 0' }}>
                 <div className="container">
-                    <div style={{ display: 'grid', gridTemplateColumns: '5fr 4fr', gap: '5rem', alignItems: 'center' }}>
+                    <div className="responsive-grid-5-4">
                         <div>
                             <h2 className="outfit" style={{ fontSize: '2.5rem', marginBottom: '2rem' }}>Edge Computing for <span style={{ color: 'var(--accent-secondary)' }}>Zero-Latency</span> Safety</h2>
                             <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
                                 Each robot is equipped with its own dedicated processing unit. Decisions like emergency stopping or obstacle rerouting happen locally, not in the cloud.
                             </p>
-                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginTop: '3rem' }}>
+                            <div className="responsive-grid-2" style={{ marginTop: '3rem' }}>
                                 <div style={{ display: 'flex', gap: '15px' }}>
                                     <Shield style={{ color: 'var(--accent-color)' }} />
                                     <div>

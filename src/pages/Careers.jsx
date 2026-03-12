@@ -40,7 +40,7 @@ const Careers = () => {
                     <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
                         <h2 className="outfit" style={{ fontSize: '2.5rem' }}>Our Culture & Perks</h2>
                     </div>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
+                    <div className="responsive-grid-auto">
                         {perks.map((perk, i) => (
                             <motion.div
                                 key={perk.title}

@@ -51,7 +51,7 @@ const Solutions = () => {
 
             <section className="product-grid section">
                 <div className="container">
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2.5rem' }}>
+                    <div className="responsive-grid-auto" style={{ gap: '2.5rem' }}>
                         {products.map((product, i) => (
                             <motion.div
                                 key={product.id}
@@ -92,7 +92,7 @@ const Solutions = () => {
             {/* Customizable CTA */}
             <section className="custom-solution section glass" style={{ borderLeft: 'none', borderRight: 'none', marginTop: '4rem' }}>
                 <div className="container">
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+                    <div className="responsive-grid-2">
                         <div>
                             <h2 className="outfit" style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>Need a <span style={{ color: 'var(--accent-color)' }}>Custom</span> Solution?</h2>
                             <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>

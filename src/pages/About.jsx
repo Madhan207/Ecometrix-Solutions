@@ -3,6 +3,9 @@ import { motion } from 'framer-motion';
 import { Target, Eye, Award, Leaf } from 'lucide-react';
 import './../styles/Global.css';
 import founderImg from '../assets/founder.jpg';
+import team1 from '../assets/team1.png';
+import team2 from '../assets/team2.jpeg';
+import team3 from '../assets/team3.png';
 
 const About = () => {
     const values = [
@@ -32,7 +35,7 @@ const About = () => {
 
             <section className="vision-mission section glass" style={{ borderLeft: 'none', borderRight: 'none' }}>
                 <div className="container">
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+                    <div className="responsive-grid-auto">
                         {values.map((v, i) => (
                             <motion.div
                                 key={i}
@@ -53,7 +56,7 @@ const About = () => {
 
             <section className="founder-message section">
                 <div className="container">
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '4rem', alignItems: 'center' }}>
+                    <div className="responsive-grid-1-2">
                         <div style={{ borderRadius: '25px', overflow: 'hidden', border: '2px solid var(--accent-color)', width: '100%', aspectRatio: '1/1', background: 'var(--panel-color)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                             <img src={founderImg} alt="Madhan Raj M" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                         </div>
@@ -68,14 +71,80 @@ const About = () => {
                     </div>
                 </div>
             </section>
+            <section className="team section">
+                <div className="container">
+                    <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+                        <h2 className="outfit" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Meet Our <span style={{ color: 'var(--accent-secondary)' }}>Team</span></h2>
+                        <p style={{ color: 'var(--text-secondary)', maxWidth: '700px', margin: '0 auto' }}>The innovative minds driving our vision forward.</p>
+                    </div>
+                    <div className="responsive-grid-auto" style={{ gap: '2rem' }}>
+                        {/* Team Member 3 */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3 }}
+                            viewport={{ once: true }}
+                            style={{ background: 'var(--panel-color)', borderRadius: '20px', overflow: 'hidden', border: '1px solid var(--border-color)', textAlign: 'center' }}
+                        >
+                            <img src={team3} alt="Aadhavan G" style={{ width: '100%', height: '300px', objectFit: 'cover', objectPosition: 'top' }} />
+                            <div style={{ padding: '1.5rem' }}>
+                                <h3 className="outfit" style={{ fontSize: '1.3rem', marginBottom: '0.2rem' }}>Aadhavan G</h3>
+                                <p style={{ color: 'var(--accent-color)', fontWeight: 600, fontSize: '0.9rem', marginBottom: '1rem' }}>Co Founder</p>
+                                <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
+                                    <p style={{ marginBottom: '0.3rem' }}>aathavanganesan18@gmail.com</p>
+                                    <p>+91 9600802107</p>
+                                </div>
+                            </div>
+                        </motion.div>
+                        {/* Team Member 1 */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.1 }}
+                            viewport={{ once: true }}
+                            style={{ background: 'var(--panel-color)', borderRadius: '20px', overflow: 'hidden', border: '1px solid var(--border-color)', textAlign: 'center' }}
+                        >
+                            <img src={team1} alt="Aloysius Ajai L" style={{ width: '100%', height: '300px', objectFit: 'cover' }} />
+                            <div style={{ padding: '1.5rem' }}>
+                                <h3 className="outfit" style={{ fontSize: '1.3rem', marginBottom: '0.2rem' }}>Aloysius Ajai L</h3>
+                                <p style={{ color: 'var(--accent-color)', fontWeight: 600, fontSize: '0.9rem', marginBottom: '1rem' }}>Director & Technical lead</p>
+                                <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
+                                    <p style={{ marginBottom: '0.3rem' }}>ajaialoysius04@gmail.com</p>
+                                    <p>+91 9345878695</p>
+                                </div>
+                            </div>
+                        </motion.div>
 
+                        {/* Team Member 2 */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2 }}
+                            viewport={{ once: true }}
+                            style={{ background: 'var(--panel-color)', borderRadius: '20px', overflow: 'hidden', border: '1px solid var(--border-color)', textAlign: 'center' }}
+                        >
+                            <img src={team2} alt="Kavin.S" style={{ width: '100%', height: '300px', objectFit: 'cover' }} />
+                            <div style={{ padding: '1.5rem' }}>
+                                <h3 className="outfit" style={{ fontSize: '1.3rem', marginBottom: '0.2rem' }}>Kavin.S</h3>
+                                <p style={{ color: 'var(--accent-color)', fontWeight: 600, fontSize: '0.9rem', marginBottom: '1rem' }}>Director & project lead</p>
+                                <div style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
+                                    <p style={{ marginBottom: '0.3rem' }}>kavin.s162006@gmail.com</p>
+                                    <p>+91 9087906837 | +91 9965480927</p>
+                                </div>
+                            </div>
+                        </motion.div>
+
+
+                    </div>
+                </div>
+            </section>
             <section className="innovation section glass" style={{ borderLeft: 'none', borderRight: 'none', background: 'linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 229, 255, 0.05))' }}>
                 <div className="container">
                     <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
                         <h2 className="outfit" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Our Innovation Focus</h2>
                         <p style={{ color: 'var(--text-secondary)', maxWidth: '700px', margin: '0 auto' }}>Combining cutting-edge AI with sustainable engineering to redefine clean spaces.</p>
                     </div>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repate(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
+                    <div className="responsive-grid-auto">
                         <div style={{ padding: '2rem' }}>
                             <h3 className="outfit" style={{ color: 'var(--accent-color)', marginBottom: '1rem' }}>Hardware Excellence</h3>
                             <p style={{ color: 'var(--text-secondary)' }}>Our robots are built with military-grade sensors and modular parts, ensuring long-term durability in even the toughest industrial environments.</p>
@@ -87,6 +156,8 @@ const About = () => {
                     </div>
                 </div>
             </section>
+
+
         </div>
     );
 };
